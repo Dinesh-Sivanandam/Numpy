@@ -1,0 +1,98 @@
+#Why numpy?
+# if there are elements of 10^5 elements notmal list will take more cmplexity else it will give runtime error
+# but in numpy is was easy to compute and run time complexity is much more speeder than list
+
+
+Numpy:
+import numpy as np
+
+
+#for arrange numbers
+np.arange()
+#syntax
+np.arange(start,end,step,dtype)  # end last_num -1
+#optional
+end, step, dtype
+
+#shape
+#syntax
+arr.shape=()
+
+#size syntax
+arr.size
+
+#datatype
+arr.dtype
+
+
+#Array
+#syntax:
+np.array(<[List of values]>,<datatype>)
+#optional
+datatype
+
+
+#reshaping array
+arr.reshape(row,column)
+
+
+# zeros - array full of zeros
+#syntax:
+np.zeros(shape, dtype, order)
+#optional:
+dtype,order
+
+#ones - array filled with ones
+#syntax:
+np.ones(shape, dtype, order)
+#optional:
+dtype,order
+
+#empty - array filled with random values
+#syntax:
+np.empty(shape, dtype, order)
+
+
+# Array copy
+1. using array operator
+2. using view() or shallow copy
+3. using copy() or Deep copy
+
+# Assignment copy - new array us not created but the variable points to the same reference
+# syntax:
+new_array = old_array # its complexity is '19.2 ns ± 2.07 ns per loop'
+
+#shallow copy - copies the references of the elements in the old array
+#syntax:
+new_array = old_array.view() #its complexity is '123 ns ± 22.4 ns per loop'
+
+# Deep copy - changes made in copy is not reflected to old array
+#syntax:
+new_array - old_array.copy() #its complxity is '310 ns ± 6.24 ns per loop'
+
+
+#element search
+#types
+1. Linear search or sequential search - n comparisions
+2. Binary Search - log(n) comparision
+
+# Linear search
+#syntax
+np.where(array_name==element_to_search)  # return list of indexes
+#complexity '2.29 µs ± 56.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)'
+
+# Binary Search
+# binary search algorithm - array must in sorted order
+#syntax
+numpy.searchsorted(array_name, value)
+#complexity '1.91 µs ± 158 ns per loop'
+
+# array manipulation
+#arrays should be in same shape while performing operatios
+#addition arr1+arr2
+#subtaction arr1-arr2
+#multiplication arr1*arr2  #for matrix multiplication we use arr1@arr2 for '.' operator else "arr1.dot(arr2)"
+#division arr1/arr2
+#modulus arr1%arr2
+#elements are not modified but returns a new array
+#we can also use compound operations like +=, -=
